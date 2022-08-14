@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //new创建
+         var arr=new Array();
+        //利用数组字面量创建【】
+        var arr=[];
+        var arr1=[1,2,'九沁菀',true];//数据一定要用逗号隔开,数组里的数据是数组元素
+        console.log(arr1);
+        console.log(arr1[2]);
+        console.log(arr1[3]);
+        var arr2=['九沁菀','心蕊','思怡'];
+        console.log(arr2);
+        console.log(arr2[0]);
+        console.log(arr2[2]);
+        console.log(arr2[4]);//无这个元素，所以结果是undefined
+        var arr3=['星期一','星期二','星期三','星期四','星期五','星期六','星期天'];
+        console.log(arr3[6]);
+        var arr4=['九沁菀','心蕊','思怡'];
+        for(var i=0;i<3;i++){
+            console.log(arr4[i]);
+        }
+        //数组索引号从0开始，i必须从0开始
+        //输出arr[i] i计数器当索引号来用
+        var arr5=['关羽','张飞','马超','赵云','黄忠','刘备','姜维',];
+        for(var i=0;i<7;i++){
+            console.log(arr5[i]);
+        }
+        console.log(arr5.length);
+        for(var i=0;i<arr5.length;i++){
+            console.log(arr5[i]);
+        }
+        // 数组的长度是元素个数 不要和索引号混淆
+        //arr.length动态监测数组元素的个数
+        var arr6=['关羽','张飞','马超','赵云','黄忠','刘备','姜维','九沁菀','心蕊','思怡'];
+        for(var i=0;i<arr6.length;i++){
+            console.log(arr6[i]);
+        }
+        console.log(arr6.length);
+        //和及平均值
+        var arr7=[2,6,1,7,4];
+        var sum=0;
+        var average=0;
+        for(var i=0;i<arr7.length;i++){
+            sum+=arr7[i];//我们加的是数组元素arr7[i]  不是计数器i
+        }
+        average=sum/arr7.length;
+          console.log(sum,average);//想要输出多个变量用逗号隔开
+          //取出最大值
+          var arr8=[2,6,1,77,52,25,7];
+          var max=arr8[0];
+          for(var i=1;i<arr8.length;i++){
+            if(arr8[i]>max){
+                max=arr8[i];
+            }
+          }
+          console.log('该数组的最大值是；'+max);
+          //数组转变为字符串
+          var arr9=['九沁菀','心蕊','思怡'];
+          var str='';
+          var sep='/'
+          for(var i=0;i<arr9.length;i++){
+            str+=arr9[i]+sep;
+          }
+          console.log(str);
+    </script>
+   
+</head>
+<body>
+    
+</body>
+</html>
