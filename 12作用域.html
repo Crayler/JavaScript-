@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //1.分为全局作用域和局部作用域
+        //全局作用域；整个script标签或者是一个单独的js文件
+        var num=10;
+        console.log(num);
+        //局部作用域：在函数内部就是局部作用域 这个代码的名字只是在函数内部起作用和效果
+        function fn(){
+            //局部作用域
+            var num=20;
+            console.log(num);
+        }
+        fn();
+        //1.全局变量：在全局作用域下的变量
+        //注意 如果在函数内部 没有声明直接赋值的变量也属于全局变量
+        var num1=44;
+        console.log(num1);
+        function fn1(){
+            console.log(num1);
+        }
+        fn1();
+        //2.局部变量 在局部作用域下的变量  后者在内部的变量就是 局部变量
+        //注意 函数的形参也可以看成局部变量
+        function fun(){
+            var num2=10;//num2就是局部变量 只能在函数内部使用
+            num3=20
+        }
+        fun();
+        // console.log(num2);
+        console.log(num3);
+        //3.从执行效率来看；
+        //(1)全局变量只有浏览器关闭的时侯才会销毁，比较占内存
+        //(2)局部变量 当我们程序执行完毕就会销毁 比较节约内存资源
+
+
+        //js目前没有块级作用域
+        //js也是在es6的时候新增块级作用域
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
