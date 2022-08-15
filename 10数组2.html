@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //修改length长度
+        var arr=['九沁菀','心蕊','思怡'];
+        console.log(arr.length);
+        arr.length=5;
+        console.log(arr);
+        console.log(arr[3]);//undefined
+        console.log(arr[4]);//undefined
+        //修改索引号
+        var arr1=['九沁菀','心蕊','思怡'];
+        arr1[3]='九';
+        console.log(arr1);
+        arr1[4]='小九';
+        console.log(arr1);
+        arr1[0]='小小九';//这里是替换原来的数组元素
+        console.log(arr1);
+        arr1='你好';
+        console.log(arr1);//不要直接给数组名赋值  否则里面的数组元素都没有了
+        var arr2=[];
+        for(var i=0;i<10;i++){
+            arr2[i]=i+1;
+        }
+          console.log(arr2);
+          var arr3=[2,0,6,1,77,0,52,0,25,7];
+          var newArr=[];
+          var j=0;
+        for(var i=0;i<arr3.length;i++){
+             if(arr3[i]>=10){
+                //新数组索引号应该从0开始 依次递增
+                newArr[j]=arr3[i];
+                j++;
+             }
+        }
+          console.log(newArr);
+        //方法2
+        var arr4=[2,0,6,1,77,0,52,0,25,7];
+        var newArr1=[];
+        //刚开始 newArr1.length是0
+        for(var i=0;i<arr4.length;i++){
+             if(arr4[i]>=10){
+                newArr1[newArr1.length]=arr4[i];
+             }
+        }
+             console.log(newArr1);
+         //删去数组指定元素
+         var arr5=[2,0,6,1,77,0,52,0,25,7];
+         var newArr2=[];
+         for(var i=0;i<arr5.length;i++){
+            if(arr5[i]!=0){
+                newArr2[newArr2.length]=arr5[i];
+            }
+         }  
+         console.log(newArr2); 
+        //翻转数组
+        var arr6=['九沁菀','心蕊','思怡'];
+        var newArr3=[];
+        for(var i=arr6.length-1;i>= 0;i--) {
+            newArr3[newArr3.length]=arr6[i];
+        }
+        console.log(newArr3);
+            //交换两个变量
+            var temp
+            var num1=10;
+            var num2=20;
+            temp=num1;
+            num1=num2;
+            num2=temp;
+            console.log(num1,num2);
+
+       var arr7=[5,4,3,2,1];
+       for(var i=0;i<=arr7.length-1;i++){
+        //外层循环负责趟数
+          for(var j=0;j<=arr7.length-i-1;j++){//里层循环负责每一趟的交换次数
+            if(arr7[j]>arr7[j+1]){
+                var temp1=arr7[j];
+                arr7[j]=arr7[j+1];
+                arr7[j+1]=temp1;
+              }
+           }
+       }
+       console.log(arr7);
+
+       var arr=[8,4,6,2,5,1,7,3];
+        for(var i=0;i<=arr.length-1;i++){
+            for(var j=0;j<=arr.length-i-1;j++){
+                if(arr[j]>arr[j+1]){
+                    var temp=arr[j];
+                    arr[j]=arr[j+1];
+                    arr[j+1]=temp;
+                }
+            }
+        }
+        console.log(arr);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
