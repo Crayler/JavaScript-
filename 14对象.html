@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+         //1.利用对象字面量的创建对象{}
+         var obj={
+            uname:'九沁菀',
+            age:18,
+            sex:'女',
+            sayHi:function(){
+                console.log('你好');
+            }
+         }
+         //(1)里面的属性或者方法我们采取键值对的形式 键 属性名：值  属性名
+         //(2)多个属性或者方法中间用逗号隔开
+         //(3)方法冒号后面跟的是一个匿名函数
+         //2.使用对象
+         //(1)调用对象的属性  我们采取的是  对象名.属性名
+         console.log(obj.uname);
+         //(2)调用属性还有一种方法  对象名['属性名']
+         console.log(obj['age']);
+         //(3)调用对象的方法 sayHi 对象名.方法名（）  千万不要忘记添加小括号
+         obj.sayHi();
+
+       
+         //变量 属性 函数  方法的区别
+         //1.变量和属性都是用来储存数据的
+         //变量 单独声明并赋值  使用的时候直接写变量名  单独存在
+         //属性 在对象里面的不需要声明   使用的时候必须是  对象.属性
+         //2.函数和方法的相同点  都是实现某种功能 做某种事
+         //函数是单独声明的  并且调用的是  函数名（） 单独存在
+         //方法 在对象调用的时候   对象.方法
+
+
+
+
+
+        //  2.利用 new Object创建对象
+         var  obj=new Object();
+         obj.uname='张三';
+         obj.age=18;
+         obj.sex='男'
+         console.log(obj.uname);
+         //3.利用构造函数创建对象
+         //前面两种创建方式一次只能创建一个对象
+         var ldh={
+            uname:'刘德华',
+            age:58,
+            sing:function(){
+                console.log('冰雨');
+            }
+         }
+         var ldh={
+            uname:'张学友',
+            age:68,
+            sing:function(){
+                console.log('李香兰');
+            }
+         }
+         //一次创建一个对象，里面很多的属性和方法事大量相同的
+
+
+         //构造函数的语法格式
+        //  function  构造函数名(){
+        //     this.属性=值;
+        //     this.方法=function(){}
+        //  }
+        // new 构造函数名();
+        function Star(uname,age,sex){
+             this.name=uname;
+             this.age=age;
+             this.sex=sex;
+             this.sing=function(sang){
+                console.log(sang);
+             }
+        }
+        var ldh=new Star('刘德华',18,'男');
+        // console.log(typeof ldh);
+        console.log(ldh.name);
+        ldh.sing('冰雨');
+        var zxy=new Star('张学友',38,'男');
+        console.log(zxy.name);
+        zxy.sing('李香兰')
+        // 1.构造函数的首字母要大写
+        //2.构造函数不需要return就可以返回值
+        //3.调用构造函数必须使用new 
+        //4.我们只要new Star()调用函数就创建一个对象ldh{}
+        //5.我们的属性和方法见面必须添加this
+
+
+        //1. 构造函数是指大类
+        // 2.对象是指具体事务
+        //我们利用构造函数创建对象的过程的我们也称为对象的实例化
+
+        //遍历对象
+        //for in 遍历对象
+        var obj={
+            name:'九沁菀',
+            age:18,
+            sex:'男'
+        }
+        for(var k in obj){
+            console.log(k);//k变量 输出 得到的是  属性
+            console.log(obj[k]);//obj[k]得到的是属性值
+        }
+
+    </script>
+</head>
+<body>
+    
+
+</body>
+</html>
