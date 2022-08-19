@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        
+        var random=getRandom(1,10);
+        while (true) {//死循环
+            var num=prompt('输入1~10的数'); //随机数方法 random()返回一个随机的小数0<=x<1    
+        //1.这个方法里面不跟参数
+        console.log(Math.random());
+        //我们想要得到两个数之间的随机整数并包括这两个数
+        function getRandom(min,max){
+            return Math.floor(Math.random()*(max-min+1))+min;
+        }
+        console.log(getRandom(1,10));
+        //随机点名
+        var arr=['张三','张山','李四','九沁菀'];
+        console.log(arr[getRandom(0,arr.length-1)]);
+
+
+        //猜数字
+        function getRandom(min,max){
+            return Math.floor(Math.random()*(max-min+1))+min;
+        }
+            if(num>random){
+               alert('你猜大了') 
+            }else if(num<random){
+               alert('你猜小了'); 
+            }else{
+                alert('才对了');
+                break;//退出整个循环
+            }
+            
+        }
+
+
+
+        //日期对象  Date() 是一个构造函数  必须使用new
+        var arr =new Array();
+        var obj =new Object();
+        //1.使用Date   如果没有参数 返回系统当前系统的当前时间
+        var date=new Date();
+        console.log(date);
+        //2.参数能用的写法 数字型 2019，10，01  或者字符串型 '2019-10-1'
+        var date1=new Date(2022,8,19);
+        console.log(date1);//返回的是9月
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
