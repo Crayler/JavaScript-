@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        
+        //日期对象  Date() 是一个构造函数  必须使用new
+        var arr =new Array();
+        var obj =new Object();
+        //1.使用Date   如果没有参数 返回系统当前系统的当前时间
+        var date=new Date();
+        console.log(date);
+        //2.参数能用的写法 数字型 2019，10，01  或者字符串型 '2019-10-1'
+        var date1=new Date(2022,8,19);
+        console.log(date1);//返回的是9月
+
+
+        //日期格式化
+        var date2=new Date();
+        console.log(date2.getFullYear());//当前年份
+        console.log(date2.getHours()+1);//月份  返回的月份要小一
+        console.log(date2.getDate());//返回几号
+        console.log(date2.getDay());//周一返回的是1 周六返回的是6 但是周日返回的是0
+        var year=date2.getFullYear();
+        var month=date2.getMonth()+1;
+        var dates=date2.getDate();
+        var arr =['星期日','星期一','星期二','星期三','星期四','星期五','星期六'];
+        var day=date2.getDay();
+        console.log('今天是'+year+'年'+month+'月'+dates+'日'+arr[day]);
+
+        
+        var date=new Date();
+        console.log(date.getHours());
+        console.log(date.getMinutes());
+        console.log(date.getSeconds());
+        //封装函数
+        function getTime(){
+            var time=new Date();
+            var h=time.getHours();
+            h=h<10?'0'+h:h;
+            var m=time.getMinutes();
+            m=m<10?'0'+m:m;
+            var s=time.getSeconds();
+            s=s<10?'0'+s:s;
+            return h+':'+m+':'+s;
+        }
+        console.log(getTime());
+
+        // 获得Date总的毫秒数(时间戳)  不是当前的时间毫秒数  而是距离1970年1月1号过了多少毫秒数
+        //1.通过valueOf()   getTime()
+        var date=new Date();
+        console.log(date.valueOf());
+        console.log(date.getTime());
+        //2.简单的写法
+        var date1=+new Date();
+        console.log(date1);
+        //3.h5新增的 获得总的毫秒数
+        console.log(Date.now());
+
+//倒计时效果
+//1.核心算法:输入的时间减去现在的时间就是剩余的时间，即倒计时，但是不能拿着时分秒相减,比如05分减去25分,结果会是负数的.
+//2.用时间戳来做。用户输入时间总的亳秒数减去现在时间的总的亳秒数，得到的就是剩余时间的亳秒数
+//3.把剩余时间总的毫秒数转换为天、时、分、秒(时间戳转换为时分秒)
+//转换公式如下:
+// d = parseInt(总秒数/ 60/60 /24);
+// 计算天数
+// h = parseInt( 总秒数/ 60/60 %24)
+//计算小时
+// m = parseInt(总秒数/60 %60 ) ;
+//计算分数
+//S= parseInt(总秒数%60);
+//计算当前秒数
+function countDown(time){
+      var nowTime=+new Date();//返回的是当前的时间总的毫秒数
+      var inputTime=+new Date(time);//返回的是用户输入的时间总的毫秒数
+      var times=(inputTime-nowTime)/1000;//times是剩余时间总的毫秒数
+      var d=parseInt(times/60/60/24);//天
+      d<10?'0'+d:d;
+      var h=parseInt(times/60/60%24);//时
+      h<10?'0'+h:h;
+      var m=parseInt(times/60%60);//分
+      m<10?'0'+m:m;
+      var s=parseInt(times%60);//当前的秒
+      s<10?'0'+s:s;
+      return d+'天'+h+'时'+m+'分'+s+'秒';
+}
+console.log(countDown('2022-8-22 14:00:00'));
+var date=new Date();
+console.log(date);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
